@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
-//    Wave tests _____________________________________________________
+    //    Wave tests _____________________________________________________
     @Test
     public void shouldIncreaseWave() {
         Radio radio = new Radio();
@@ -86,7 +86,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-//    Volume tests _____________________________________________________
+    //    Volume tests _____________________________________________________
     @Test
     public void shouldIncreaseVolume() {
         Radio radio = new Radio();
@@ -116,7 +116,7 @@ public class RadioTest {
     }
 
     @Test
-    public void reduceVolumeBelowMin(){
+    public void reduceVolumeBelowMin() {
         Radio radio = new Radio();
 
         radio.setCurrentVolume(0); //currentVolume = 0;
@@ -130,7 +130,7 @@ public class RadioTest {
     }
 
     @Test
-    public void increaseVolumeAboveMax(){
+    public void increaseVolumeAboveMax() {
         Radio radio = new Radio();
 
         radio.setCurrentVolume(10); //currentVolume = 10;

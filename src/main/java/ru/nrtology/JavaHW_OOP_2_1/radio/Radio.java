@@ -1,14 +1,17 @@
 package ru.nrtology.JavaHW_OOP_2_1.radio;
 
 public class Radio {
-    public int currentVolume;
-    public int currentWave;
-    public int getCurrentVolume(){
+    private int currentVolume;
+    private int currentWave;
+
+    public int getCurrentVolume() {
         return currentVolume;
     }
+
     public int getCurrentWave() {
         return currentWave;
     }
+
     public void setCurrentVolume(int newCurrentVolume) {
         if (newCurrentVolume < 0) {
             return;
@@ -32,25 +35,33 @@ public class Radio {
     public void increaseWave() {
         if (currentWave < 9) {
             currentWave = currentWave + 1;
-        } else currentWave = 0;
+        } else {
+            currentWave = 0;
+        }
     }
 
     public void reduceWave() {
         if (currentWave > 0) {
             currentWave = currentWave - 1;
-        } else currentWave = 9;
+        } else {
+            currentWave = 9;
+        }
     }
 
     public void increaseVolume() {
         if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
-        } else currentVolume = 10;
+        } else {
+            currentVolume = 10;
+        }
     }
 
     public void reduceVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        } else currentVolume = 0;
+        } else {
+            currentVolume = 0;
+        }
     }
 
 }
