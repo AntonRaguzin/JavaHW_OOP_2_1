@@ -1,66 +1,109 @@
 package ru.nrtology.JavaHW_OOP_2_1.radio;
 
 public class Radio {
-    private int currentVolume;
+
+    private int wavesQuantity;
+    private int maxWave;
+    private int minWave = 0;
     private int currentWave;
 
-    public int getCurrentVolume() {
-        return currentVolume;
+    private int minVol = 0;
+    private int maxVol = 100;
+    private int currentVolume;
+
+    public Radio(int wavesQuantity) {
+        if (wavesQuantity < 1) {
+            return;
+        }
+        if (wavesQuantity > 60) {
+            return;
+        }
+        this.wavesQuantity = wavesQuantity;
+        this.maxWave = wavesQuantity - 1;
+    }
+
+    public Radio() {
+        this.wavesQuantity = 10;
+        this.maxWave = wavesQuantity - 1;
+    }
+
+    public int getWavesQuantity() {
+        return wavesQuantity;
+    }
+
+    public int getMaxWave() {
+        return maxWave;
+    }
+
+    public int getMinWave() {
+        return minWave;
     }
 
     public int getCurrentWave() {
         return currentWave;
     }
 
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public int getMinVol() {
+        return minVol;
+    }
+
+    public int getMaxVol() {
+        return maxVol;
+    }
+
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
+        if (newCurrentVolume < minVol) {
             return;
         }
-        if (newCurrentVolume > 10) {
+        if (newCurrentVolume > maxVol) {
             return;
         }
         currentVolume = newCurrentVolume;
     }
 
     public void setCurrentWave(int newCurrentWave) {
-        if (newCurrentWave < 0) {
+        if (newCurrentWave < minWave) {
             return;
         }
-        if (newCurrentWave > 9) {
+        if (newCurrentWave > maxWave) {
             return;
         }
         currentWave = newCurrentWave;
     }
 
     public void increaseWave() {
-        if (currentWave < 9) {
+        if (currentWave < maxWave) {
             currentWave = currentWave + 1;
         } else {
-            currentWave = 0;
+            currentWave = minWave;
         }
     }
 
     public void reduceWave() {
-        if (currentWave > 0) {
+        if (currentWave > minWave) {
             currentWave = currentWave - 1;
         } else {
-            currentWave = 9;
+            currentWave = maxWave;
         }
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVol) {
             currentVolume = currentVolume + 1;
         } else {
-            currentVolume = 10;
+            currentVolume = maxVol;
         }
     }
 
     public void reduceVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > minVol) {
             currentVolume = currentVolume - 1;
         } else {
-            currentVolume = 0;
+            currentVolume = minVol;
         }
     }
 
